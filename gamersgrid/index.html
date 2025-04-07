@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GamersGrid</title>
+  <link rel="stylesheet" href="./css/indexstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <!-- Favicons-->
+    <link rel="icon" href="images/GGLOGO.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/GGLOGO.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="images/GGLOGO.png">
+    <!-- For Windows Phone -->
+     
+</head>
+
+<body>
+
+
+  <header>
+    <div class="content flex_space">
+      <div class="logo">
+        <img src="images/GGLOGO1.png" alt="">
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="#home">home</a> </li>
+          <li><a href="#tournament">event</a> </li>
+          <li><a href="#news">news</a> </li>
+          <li><a href="#footer">contact</a> </li>
+          <li><a href="auth/register.php" class="primary-btn">SIGN UP</a></li>
+          <li><a href="auth/login.php" class="primary-btn">LOGIN</a></li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+  </header>
+
+
+  <script>
+    var menulist = document.getElementById('menulist');
+    menulist.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menulist.style.maxHeight == "0px") {
+        menulist.style.maxHeight = "100vh";
+      } else {
+        menulist.style.maxHeight = "0px";
+      }
+    }
+
+    // Check if user is logged in
+    window.onload = function() {
+      const username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('loginButton').style.display = 'none'; // Hide login button
+        document.getElementById('logoutButton').style.display = 'block'; // Show logout button
+        // Optionally, you can display a welcome message
+        alert(`Welcome back, ${username}!`);
+      }
+    };
+
+  </script>
+
+
+  <section class="home">
+    <div class="content">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="images/3.jpg" alt="">
+          <div class="text">
+            <h1>Enjoy Our Games</h1>
+            <p>Choose your type of games to play in tournament. Lots of gifts is waiting you
+            </p>
+            <div class="flex">
+              <button class="primary-btn" onclick="scrollToWelcome()">READ MORE</button>
+              <button class="secondary-btn" onclick="scrollToFooter()">CONTACT US</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/1.jpg" alt="">
+          <div class="text">
+            <h1>Enjoy Our Games</h1>
+            <p>Choose your type of games to play in tournament. Lots of gifts is waiting you.
+            </p>
+            <div class="flex">
+              <button class="primary-btn">READ MORE</button>
+              <button class="secondary-btn">CONTACT US</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/2.jpg" alt="">
+          <div class="text">
+            <h1>Enjoy Our Games</h1>
+            <p>Choose your type of games to play in tournament. Lots of gifts is waiting you.
+            </p>
+            <div class="flex">
+              <button class="primary-btn">READ MORE</button>
+              <button class="secondary-btn">CONTACT US</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    function scrollToWelcome() {
+    const welcomeSection = document.getElementById('welcome');
+    welcomeSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToFooter() {
+    const footerSection = document.getElementById('footer');
+    footerSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+
+
+<!-- WELCOME -->
+  <section id="welcome" class="about top">
+    <div class="container flex">
+      <div class="left">
+        <div class="heading">
+          <h1>WELCOME</h1>
+          <h2>GamersGrid</h2>
+        </div>
+        <p>A comrehensive E-Sports Event Management System which is designed to
+simplify the planning, organization, and execution of e-sports tournaments. This system provides
+a centralized and automated solution for system administrators, event organizers, and event
+attendees, ensuring seamless coordination and enhanced gaming experience. </p>
+      </div>
+      <div class="right">
+        <img src="images/win1.jpg" alt="" style="width: 100%; height: auto;">
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="tournament" class="tournament top rooms">
+    <div class="container top">
+      <div class="heading">
+        <h1>EXPOLRE</h1>
+        <h2>Our Tournament</h2>
+        <p>Get ready to witness epic battles as top gamers clash for glory! Join us for an unforgettable tournament experience.</p>
+      </div>
+
+      <div class="content mtop">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          <div class="items">
+            <div class="image">
+              <img src="images/LoL.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>League of Legends</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Are you ready to prove your skills? This is your chance to showcase your talent against some of the best players in the community. Watch the tournament for only
+              </p>
+              <div class="button flex">
+                <a href="auth/register.php" class="primary-btn">BOOK NOW</a>
+                <h3>RM80 <span> <br> Per Game </span> </h3>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/CS.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>Counter Strike</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Gear up and get ready! Join our Counter-Strike tournament for a chance to prove your skills and claim victory! Watch the tournament for only .
+              </p>
+              <div class="button flex">
+                <a href="auth/register.php" class="primary-btn">BOOK NOW</a>
+                <h3>RM70 <span> <br> Per Game </span> </h3>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/dota.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>DOTA</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>The battle for the Ancients begins! Assemble your team and compete in our Dota 2 tournament for glory and prizes! Watch the tournament for only
+              </p>
+              <div class="button flex">
+                <a href="auth/register.php" class="primary-btn">BOOK NOW</a>
+                <h3>RM90 <span> <br> Per Game </span> </h3>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/CoD.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>Call of Duty</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Lock and load! Are you ready to dominate the battlefield? Sign up for our Call of Duty tournament and show us what you've got or watch the tournament for only .
+              </p>
+              <div class="button flex">
+                <a href="auth/register.php" class="primary-btn">BOOK NOW</a>
+                <h3>RM80 <span> <br> Per Game </span> </h3>
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/SC.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>Starcraft</h2>
+              <div class="rate flex">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>Prepare for intergalactic warfare! Join and sign up our Starcraft tournament for free and strategize your way to the top! Watch the tournament with only.
+              </p>
+              <div class="button flex">
+                <a href="auth/register.php" class="primary-btn">BOOK NOW</a>
+                <h3>RM50 <span> <br> Per Game </span> </h3>
+              </div>
+            </div>
+          </div>
+</section>
+          
+  <script>
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 40,
+      nav: true,
+      dots: false,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2,
+          margin: 10,
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+
+
+  <section class="gallery">
+    <div class="container top">
+      <div class="heading">
+        <h1>PHOTOS</h1>
+        <h2>Our Gallery</h2>
+        <p>The thrill of victory: Celebrating our champions! </p>
+      </div>
+    </div>
+
+    <div class="content mtop">
+      <div class="owl-carousel owl-carousel1 owl-theme">
+        <div class="items">
+          <div class="img">
+            <img src="images/a.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/b.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/c.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/d.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/e.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/f.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/d.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/c.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/a.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="images/f.jpg" alt="">
+          </div>
+          <div class="overlay">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Pic below Our Gallery -->
+  <script>
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 4,
+        },
+        1000: {
+          items: 6
+        }
+      }
+    })
+  </script>
+
+
+<!-- Our News -->
+  <section id="news" class="news top rooms">
+    <div class="container">
+      <div class="heading">
+        <h1>NEWS</h1>
+        <h2>Our News</h2>
+        <p>Game On: Highlights from our recent tournaments!
+      </div>
+
+
+      <div class="content flex">
+        <div class="left grid2">
+          <div class="items">
+            <div class="image">
+              <img src="images/a.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>Game Updates</h2>
+              <div class="admin flex">
+                <i class="fa fa-user"></i>
+                <label>Admin</label>
+                <i class="fa fa-heart"></i>
+                <label>500</label>
+                <i class="fa fa-comments"></i>
+              </div>
+              <p>The latest update to our favorite battle royale game introduces exciting new features, including enhanced graphics and a revamped map that promises to elevate the gaming experience for both new and veteran players alike.</p>
+            </div>
+          </div>
+          <div class="items">
+            <div class="image">
+              <img src="images/b.jpg" alt="">
+            </div>
+            <div class="text">
+              <h2>New PC setup.</h2>
+              <div class="admin flex">
+                <i class="fa fa-user"></i>
+                <label>Admin</label>
+                <i class="fa fa-heart"></i>
+                <label>500</label>
+                <i class="fa fa-comments"></i>
+              </div>
+              <p>Our gaming community is buzzing with excitement as we unveil our brand-new PC setup, featuring cutting-edge hardware that ensures lightning-fast performance and stunning visuals for an immersive gaming experience.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="box flex">
+            <div class="img">
+              <img src="images/c.jpg" alt="">
+            </div>
+            <div class="stext">
+              <h2>All Female Players</h2>
+              <p>In a groundbreaking move for inclusivity in esports, our all-female team, representing diverse backgrounds and cultures, is set to compete in the upcoming tournament, showcasing the incredible talent and skill of women in gaming.
+              </p>
+            </div>
+          </div>
+          <div class="box flex">
+            <div class="img">
+              <img src="images/e.jpg" alt="">
+            </div>
+            <div class="stext">
+              <h2>Full House</h2>
+              <p>The atmosphere was electric as fans filled the venue to capacity, eagerly cheering on their favorite teams during the thrilling championship match, proving once again that our community's passion for gaming knows no bounds..
+              </p>
+            </div>
+          </div>
+          <div class="box flex">
+            <div class="img">
+              <img src="images/d.jpg" alt="">
+            </div>
+            <div class="stext">
+              <h2>Next Season Teams</h2>
+              <p>As the competitive season heats up, players are honing their skills and strategies in preparation for the upcoming league, where only the best will rise to the top and claim the coveted championship title..
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <footer id="footer">
+    <div class="container grid">
+      <div class="box">
+        <img src="images/GGLOGO.png" alt="">
+        <p>Thank You for Being Part of Our Journey. We appreciate your support and enthusiasm for the gaming community. Together, we can continue to build a platform that celebrates gaming culture, fosters friendships, and inspires the next generation of gamers. Thank you for being a part of GamersGrid! We invite you to connect with us on our social media platforms to stay updated on the latest news, tournaments, and community events. Join the conversation, share your gaming moments, and meet fellow gamers who share your interests. Your voice matters, and together, we can create an inclusive and supportive environment for everyone. </p>
+
+        <div class="icon">
+          <a href="https://www.facebook.com/Malaysiagamers/" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/umyrahbadrulhisham/" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-instagram"></i> 
+          </a>
+          <a href="https://twitter.com/MalaysiaGaming" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/@PialaEsportMalaysia" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Contact Us</h2>
+        <p>Have questions or feedback? Reach out to us, and let's connect! </p>
+        <i class="fa fa-location-dot"></i>
+        <label> Petaling Jaya </label> <br>
+        <i class="fa fa-phone"></i>
+        <label>03-45678910</label> <br>
+        <i class="fa fa-envelope"></i>
+        <label>gamersgrid@gmail.com</label> <br>
+      </div>
+    </div>
+  </footer>
+
+  <div class="legal">
+    <p class="container">Copyright © 2025 GamersGrid. All Rights Reserved.</p>
+  </div>
+
+
+
+  <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

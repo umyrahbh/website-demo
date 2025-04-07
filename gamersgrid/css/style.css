@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+}
+form {
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+}
+input, textarea, button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+button {
+    background: #03dac6;
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+
